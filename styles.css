@@ -1,0 +1,270 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #008CBA;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: top 0.3s;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #006F8E;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #FF7F32;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #FF5C00;
+}
+
+/* Apps Section */
+.apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.apps h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.app-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.app-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.app-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.app-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Developer Section */
+.developers {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.developers h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.developer-card {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.developer-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.developer-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.developer-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.developer-card a {
+    font-size: 16px;
+    color: #008CBA;
+    text-decoration: none;
+}
+
+.developer-card a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input,
+.contact form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact form button {
+    padding: 10px 20px;
+    background-color: #FF7F32;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.contact form button:hover {
+    background-color: #FF5C00;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #008CBA;
+    color: white;
+}
+
+/* Scroll Up Logic for Header */
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.3s ease;
+}
