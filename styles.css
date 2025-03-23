@@ -268,3 +268,15 @@ header.sticky {
     right: 0;
     transition: top 0.3s ease;
 }
+
+/* Hide Scrollbar (but still allow scrolling) */
+body, html {
+    height: 100%;
+    overflow: hidden; /* Hides the scrollbar */
+    -ms-overflow-style: none;  /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
