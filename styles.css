@@ -86,6 +86,19 @@ header nav ul li a {
     background-color: #FF5C00;
 }
 
+.cta-btn1 {
+    background-color: #FF7F32;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn1:hover {
+    background-color: #FF5C00;
+}
+
 /* Apps Section */
 .apps {
     display: grid;
@@ -97,7 +110,7 @@ header nav ul li a {
 
 .apps h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 42px;
     margin-bottom: 40px;
 }
 
@@ -267,16 +280,4 @@ header.sticky {
     left: 0;
     right: 0;
     transition: top 0.3s ease;
-}
-
-/* Hide Scrollbar (but still allow scrolling) */
-body, html {
-    height: 100%;
-    overflow: hidden; /* Hides the scrollbar */
-    -ms-overflow-style: none;  /* For Internet Explorer */
-    scrollbar-width: none; /* For Firefox */
-}
-
-body::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
 }
