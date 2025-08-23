@@ -3,115 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The ImmersioLab offers three innovative educational apps: VR Chess, ABCD AR, and VR Biology Lab.">
-    <title>ImmersioLab</title>
-    <link rel="icon" href="images\favicon.png" type="image/png">
+    <title>ImmersioLab - VR & AR Educational Apps</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header id="header">
-        <div class="logo">ImmersioLab</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#apps">Apps</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#developers">Developers</a></li>
+    <!-- Sticky Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-cube"></i>
+                <span>ImmersioLab</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#apps" class="nav-link" data-section="apps">All Apps</a></li>
+                <li><a href="#developers" class="nav-link" data-section="developers">Developers</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
             </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Welcome to the ImmersioLab</h1>
-        <p>Explore our innovative educational apps and enhance your learning experience in VR & AR.</p>
-        <a href="#apps" class="cta-btn">Explore Apps</a>
-    </section>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to <span class="highlight">ImmersioLab</span></h1>
+                    <p class="hero-tagline">Transforming education through cutting-edge VR and AR experiences. Explore our growing collection of innovative educational applications.</p>
+                    <button class="cta-button" id="hero-cta">
+                        <span>Explore Our Apps</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <span>VR Learning</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>AR Experiences</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Apps Section -->
-        <section id="apps" class="apps">
-            <h2>Our Apps</h2>
-        <div class="app-card">
-            <img src="images/abcd-ar.jpg" alt="LetterLand AR App" height="132px">
-            <h3>Letterland AR</h3>
-            <p>Interactive AR learning for young children. Learn letters, numbers, and shapes through fun 3D objects.</p>
-            <a href="https://drive.google.com/uc?export=download&id=1ldRUeO3hL3h55uFHwhxml2Z8TusWDZIu" class="cta-btn1">Download Now</a>
+            <!-- Featured Apps Section -->
+            <div class="featured-apps" id="featured-apps-section">
+                <div class="container">
+                    <h2 class="section-title">Featured Apps</h2>
+                    <p class="section-subtitle">Discover our most popular educational VR and AR applications</p>
+                    <div class="apps-grid" id="featured-apps-grid">
+                        <!-- Dynamically loaded featured apps -->
+                    </div>
+                    <div class="cta-center">
+                        <button class="secondary-button" data-section="apps">
+                            <span>View All Apps</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Apps Section -->
+        <section id="apps-section" class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">All Apps</h1>
+                    <p class="page-subtitle">Explore our complete collection of VR and AR educational applications</p>
+                </div>
+                <div class="apps-grid" id="all-apps-grid">
+                    <!-- Dynamically loaded all apps -->
+                </div>
+            </div>
+        </section>
+
+        <!-- App Detail Section -->
+        <section id="app-detail-section" class="section">
+            <div class="container">
+                <button class="back-button" id="back-to-apps">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Apps</span>
+                </button>
+                <div id="app-detail-content">
+                    <!-- Dynamically loaded app details -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Developers Section -->
+        <section id="developers-section" class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Our Team</h1>
+                    <p class="page-subtitle">Meet the talented developers behind ImmersioLab's innovative educational experiences</p>
+                </div>
+                <div class="developers-grid" id="developers-grid">
+                    <!-- Dynamically loaded developers -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ImmersioLab. All rights reserved.</p>
         </div>
-        <div class="app-card">
-            <img src="images/bio-lab.jpg" alt="VR Biology Lab" height="132px">
-            <h3>VR Biology Lab</h3>
-            <p>Explore the world of biology in a 3D virtual environment. Study anatomy, cells, and more.</p>
-            <a href="#" class="cta-btn">Download Now</a>
-        </div>
-    </section>
-
-    <!--
-        <div class="app-card">
-            <img src="chess.jpg" alt="VR EduGame">
-            <h3>VR Chess Game</h3>
-            <p>Challenge friends in a 3D game environment. Enhance strategic thinking, memory, and problem-solving.</p>
-            <a href="#" class="cta-btn">Coming Soon</a>
-        </div>    -->
-
-    <!-- Developers Section -->
-    <section id="developers" class="developers">
-        <h2>Meet the Developers</h2>
-        <div class="developer-card">
-            <img src="images/developer1.jpg" alt="Developer 1">
-            <h3>Sabir Mallick</h3>
-            <p>Lead Developer. Passionate about creating innovative educational experiences and pushing the boundaries of VR and AR technologies.</p>
-            <a href="https://www.linkedin.com/in/developer1" target="_blank">LinkedIn</a>
-        </div>
-        <div class="developer-card">
-            <img src="images/developer2.jpg" alt="Developer 2">
-            <h3>Soumyadeep Sarkar</h3>
-            <p>AR/VR Specialist and Game Developer Excels in creating interactive virtual environments that make learning both fun and impactful.</p>
-            <a href="https://www.linkedin.com/in/developer2" target="_blank">LinkedIn</a>
-        </div>
-        <div class="developer-card">
-            <img src="images/developer4.jpg" alt="Developer 3">
-            <h3>Aditi Biswas</h3>
-            <p>VR/AR Specialist. Excels in creating interactive virtual environments that make learning both fun and impactful.</p>
-            <a href="https://www.linkedin.com/in/developer3" target="_blank">LinkedIn</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out to us!</p>
-        <form>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Modal for Developer Info -->
-    <div id="developerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Developer Info</h3>
-            <p id="developerDetails">More details about the developer will appear here.</p>
-        </div>
-    </div>
-
-    <!-- Download Popup Modal -->
-    <div id="downloadModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Download Coming Soon!</h3>
-            <p>Stay tuned for the release.</p>
-        </div>
-    </div>
-
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 The ImmersioLab. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <!-- Developer Modal -->
+    <div class="modal" id="developer-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Dynamically loaded developer details -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
