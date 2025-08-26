@@ -159,7 +159,7 @@ function navigateToSection(sectionName, updateHistory = true) {
 
     // Update URL and history
     if (updateHistory) {
-        window.history.pushState(null, '', `#${sectionName}`);
+        window.history.pushState(null, '', `${sectionName}`);
     }
 
     // Update current section
