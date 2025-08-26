@@ -36,9 +36,16 @@ function initializeApp() {
     initializeTheme();
     
     // Set initial section based on URL hash
-    const hash = window.location.hash.replace('#', '');
-    if (hash && ['home', 'apps', 'developers'].includes(hash)) {
-        navigateToSection(hash);
+    const path = window.location.pathname;
+    if (path === '/' || path === '') {
+        navigateToSection('home');
+    } else if (path === '/apps') {
+        navigateToSection('apps');
+    } else if (path === '/developers') {
+        navigateToSection('developers');
+    } else if (path.startsWith('/app/')) {
+        const appId = path.replace('/app/', '');
+        showAppDetail(appId);
     } else {
         navigateToSection('home');
     }
@@ -79,8 +86,19 @@ function setupEventListeners() {
 
     // Handle browser back/forward
     window.addEventListener('popstate', (e) => {
-        const hash = window.location.hash.replace('#', '') || 'home';
-        navigateToSection(hash, false);
+        const path = window.location.pathname;
+        if (path === '/') {
+            navigateToSection('home', false);
+        } else if (path === '/apps') {
+            navigateToSection('apps', false);
+        } else if (path === '/developers') {
+            navigateToSection('developers', false);
+        } else if (path.startsWith('/app/')) {
+            const appId = path.replace('/app/', '');
+            showAppDetail(appId);
+        } else {
+            navigateToSection('home', false);
+        }
     });
 
     // Secondary buttons
@@ -159,7 +177,8 @@ function navigateToSection(sectionName, updateHistory = true) {
 
     // Update URL and history
     if (updateHistory) {
-        window.history.pushState(null, '', `${sectionName}`);
+        const url = sectionName === 'home' ? '/' : `/${sectionName}`;
+        window.history.pushState(null, '', url);
     }
 
     // Update current section
@@ -301,7 +320,7 @@ function showAppDetail(appId) {
     document.getElementById('app-detail-section').classList.add('active');
     
     // Update URL
-    window.history.pushState(null, '', `#app/${appId}`);
+    window.history.pushState(null, '', `/app/${appId}`);
     
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
